@@ -26,7 +26,7 @@
 | Recommendations             | Number of recommendations the borrower had at the time the listing was created.              |
 | Loan Status                 | The current status of the loan: Cancelled, Chargedoff, Completed, Current, Defaulted, FinalPaymentInProgress, PastDue. PastDue includes delinquency. |
 | Loan Status Category       | The current status of the loan: **Good** ( Completed, Current,  FinalPaymentInProgress), **Bad** ( Cancelled, Charged off, Defaulted), **PastDue** (PastDue includes delinquency). |
- 
+
 ----
 
 ![Loan Dashboard](Dashboard.png)
@@ -74,12 +74,12 @@
 
 ### Bivariate Exploration
 
->BorrowerAPR VS [ 2) LoanOriginalAmount ,4) StatedMonthlyIncome ,6)EmploymentStatusDuration' ,7)CurrentDelinquencies' ,8)DelinquenciesLast7Years' ,9)Recommendations' ]
+> BorrowerAPR VS [ (2) LoanOriginalAmount, (4) StatedMonthlyIncome, (6)EmploymentStatusDuration, (7) CurrentDelinquencies, (8)DelinquenciesLast7Years, (9) Recommendations ]
 
->3)LoanStatus VS
-> [4) StatedMonthlyIncome ,6)EmploymentStatusDuration' ,7)CurrentDelinquencies',8)DelinquenciesLast7Years' ]
+> (3) LoanStatus VS
+> [(4) StatedMonthlyIncome, (6) EmploymentStatusDuration, (7) CurrentDelinquencies, (8) DelinquenciesLast7Years]
 
-> LoanStatus VS [1)Term ,6)EmploymentStatus]
+> LoanStatus VS [(1) Term ,(6) EmploymentStatus]
 
 ### Multivariate Exploration
->BorrowerAPR VS LoanOriginalAmount VS [1)Term ,6)EmploymentStatus,11)LoanStatus]
+> BorrowerAPR VS LoanOriginalAmount VS [(1) Term, (6) EmploymentStatus, (11) LoanStatus]
