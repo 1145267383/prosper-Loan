@@ -1,0 +1,48 @@
+# 'dataset' holds the input data for this script
+import numpy as np
+import pandas as pd
+
+# Selecting important columns
+name_columns = [
+    "MemberKey", "Term", "LoanOriginalAmount", "BorrowerAPR", 
+    "StatedMonthlyIncome", "EmploymentStatus", "EmploymentStatusDuration",
+    "CurrentDelinquencies", "DelinquenciesLast7Years", "Recommendations", "LoanStatus"
+]
+dataset = dataset[name_columns]
+
+# ——— Handle Missing Values ———
+# Count missing values before
+na_before = dataset.isnull().sum()
+
+# Drop rows with missing values
+dataset = dataset.dropna()
+
+# Count missing values after
+na_after = dataset.isnull().sum()
+
+# Return missing values comparison as table
+na_n = pd.DataFrame({
+    "Missing Before": na_before,
+    "Missing After": na_after
+}).reset_index().rename(columns={"index": "Column"})
+
+# ——— Handle Duplicates ———
+# Count duplicates before
+dup_before = dataset.duplicated().sum()
+
+# Drop duplicate rows
+dataset = dataset.drop_duplicates()
+
+# Count duplicates after
+dup_after = dataset.duplicated().sum()
+
+# Return duplicates summary
+dup_n = pd.DataFrame({
+    "Duplicates Before": [dup_before],
+    "Duplicates After": [dup_after]
+})
+----------------------------
+LoanStatus_Cat = if [LoanStatus] = "Completed" or [LoanStatus] = "Current" or [LoanStatus] = "FinalPaymentInProgress" then "Good"
+else if [LoanStatus] = "Chargedoff" or [LoanStatus] = "Defaulted" or [LoanStatus] = "Cancelled" then "Bad"
+else if Text.StartsWith([LoanStatus], "Past Due") then "PastDue"
+else "Other"

@@ -1,6 +1,7 @@
 # (Loan Data from Prosper)
 ## by (Mohamed Abd Al-mgyd)
 
+----
 
 ## Dataset
 
@@ -9,6 +10,7 @@
 loan, including loan amount, borrower rate (or interest rate), 
 current loan status, borrower income, and many others.
 
+----
 
 >Variable                       Description
 Listing Key                     Unique key for each listing, same value as the 'key' used in the listing object in the API.
@@ -22,7 +24,11 @@ Current Delinquencies           Number of accounts delinquent at the time the cr
 Recommendations                 Number of recommendations the borrower had at the time the listing was created.
 Loan Status                     The current status of the loan: Cancelled,  Chargedoff, Completed, Current, Defaulted, FinalPaymentInProgress, PastDue. The PastDue status will be accompanied by a delinquency bucket.
 
+----
 
+![Loan Dashboard](Dashboard.png)
+
+-----
 
 ## Summary of Findings
 
@@ -37,6 +43,8 @@ Loan Status                     The current status of the loan: Cancelled,  Char
 >  C-ِ Are there  differences between loan sizes? yes
       Approve weth {StatedMonthlyIncome ,EmploymentStatusDuration}
      Reverse weth {BorrowerAPR ,CurrentDelinquencies ,DelinquenciesLast7Years}
+
+----
 
 ## Key Insights for Presentation
 
